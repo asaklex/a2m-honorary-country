@@ -1,13 +1,7 @@
-import ConceptRibbon from './components/ConceptRibbon'
 import HonoraryCountryPage from './pages/HonoraryCountryPage'
 
-// Single-page standalone: concept ribbon + the Honorary Country page, no site
-// chrome (owner request 2026-10-08: "no need for the Nav bar").
+// Single-page standalone: just the Honorary Country page, no site chrome
+// (owner rulings 2026-10-08: no nav bar, no concept ribbon).
 export default function App() {
-  return (
-    <>
-      <ConceptRibbon />
-      <HonoraryCountryPage />
-    </>
-  )
+  return <HonoraryCountryPage />
 }

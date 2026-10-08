@@ -6,6 +6,7 @@
 // event facts (Centre Mont-Royal, June 7–9, 2027).
 import type { ReactNode } from 'react'
 import { legacyFrenchOrigin } from '../data/navigation'
+import OnThisPageNav from '../components/OnThisPageNav'
 
 // Standalone extract: the four site-internal links (waitlist, prev/next) point
 // at the live A2M production site so they keep working outside the app router.
@@ -169,8 +170,20 @@ export default function HonoraryCountryPage() {
           </div>
         </div>
       </section>
+      <OnThisPageNav
+        items={[
+          { id: 'rising-force', label: 'A rising force' },
+          { id: 'full-ascent', label: 'A country in full ascent' },
+          { id: 'gold-story', label: 'The gold story' },
+          { id: 'exploration-surge', label: 'Exploration surge' },
+          { id: 'beyond-gold', label: 'Beyond gold' },
+          { id: 'proven-partner', label: 'A proven partner' },
+          { id: 'vision', label: 'The vision' },
+        ]}
+      />
+
       {/* 2 · A rising force — three photo cards on white */}
-      <section id="rising-force" className="scroll-mt-24 bg-ivory px-4 py-20 sm:scroll-mt-32 sm:px-8 lg:scroll-mt-[190px] lg:px-16">
+      <section id="rising-force" className="scroll-mt-24 bg-ivory px-4 py-20 sm:scroll-mt-32 sm:px-8 lg:scroll-mt-24 lg:px-16">
         <div className="mx-auto w-full max-w-[max(1280px,80vw)]">
           <Eyebrow>Côte d&rsquo;Ivoire » Honorary Country 2027</Eyebrow>
           <h2 className="mt-3 font-display text-h1 text-ink">A rising force in West African mining</h2>
@@ -199,7 +212,7 @@ export default function HonoraryCountryPage() {
       </section>
 
       {/* 3 · A Country in Full Ascent — dark photo band, 4 stat cards */}
-      <section id="full-ascent" className="relative scroll-mt-24 overflow-hidden bg-emerald-ink px-4 py-20 text-ivory sm:scroll-mt-32 sm:px-8 lg:scroll-mt-[190px] lg:px-16">
+      <section id="full-ascent" className="relative scroll-mt-24 overflow-hidden bg-emerald-ink px-4 py-20 text-ivory sm:scroll-mt-32 sm:px-8 lg:scroll-mt-24 lg:px-16">
         <img
           alt=""
           aria-hidden="true"
@@ -249,7 +262,7 @@ export default function HonoraryCountryPage() {
       </section>
 
       {/* 4 · The Gold Story — production timeline, six stat cards */}
-      <section id="gold-story" className="scroll-mt-24 bg-ivory px-4 py-20 sm:scroll-mt-32 sm:px-8 lg:scroll-mt-[190px] lg:px-16">
+      <section id="gold-story" className="scroll-mt-24 bg-ivory px-4 py-20 sm:scroll-mt-32 sm:px-8 lg:scroll-mt-24 lg:px-16">
         <div className="mx-auto w-full max-w-[max(1280px,80vw)]">
           <Eyebrow>The Gold Story</Eyebrow>
           <h2 className="mt-3 font-display text-h1 text-ink">From Promise to Production</h2>
@@ -296,7 +309,7 @@ export default function HonoraryCountryPage() {
       </section>
 
       {/* 5 · Exploration surge — dark band with +82% stat card */}
-      <section id="exploration-surge" className="relative scroll-mt-24 overflow-hidden bg-emerald-ink px-4 py-20 text-ivory sm:scroll-mt-32 sm:px-8 lg:scroll-mt-[190px] lg:px-16">
+      <section id="exploration-surge" className="relative scroll-mt-24 overflow-hidden bg-emerald-ink px-4 py-20 text-ivory sm:scroll-mt-32 sm:px-8 lg:scroll-mt-24 lg:px-16">
         <img
           alt=""
           aria-hidden="true"
@@ -335,7 +348,7 @@ export default function HonoraryCountryPage() {
       </section>
 
       {/* 6 · Beyond Gold — strategic minerals pills */}
-      <section id="beyond-gold" className="scroll-mt-24 bg-ivory px-4 py-20 sm:scroll-mt-32 sm:px-8 lg:scroll-mt-[190px] lg:px-16">
+      <section id="beyond-gold" className="scroll-mt-24 bg-ivory px-4 py-20 sm:scroll-mt-32 sm:px-8 lg:scroll-mt-24 lg:px-16">
         <div className="mx-auto w-full max-w-[max(1280px,80vw)]">
           <Eyebrow>Beyond Gold</Eyebrow>
           <h2 className="mt-3 font-display text-h1 text-ink">
@@ -368,7 +381,7 @@ export default function HonoraryCountryPage() {
       </section>
 
       {/* 7 · A Proven Partner — dark editorial band, framed portrait + pull quote */}
-      <section id="proven-partner" className="relative scroll-mt-24 overflow-hidden bg-emerald-ink px-4 py-20 text-ivory sm:scroll-mt-32 sm:px-8 lg:scroll-mt-[190px] lg:px-16 lg:py-28">
+      <section id="proven-partner" className="relative scroll-mt-24 overflow-hidden bg-emerald-ink px-4 py-20 text-ivory sm:scroll-mt-32 sm:px-8 lg:scroll-mt-24 lg:px-16 lg:py-28">
         <div aria-hidden="true" className="a2m-motif absolute inset-0" />
         <div className="relative z-10 mx-auto grid w-full max-w-[max(1280px,80vw)] items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
           <figure className="a2m-reveal mx-auto w-full max-w-[400px] overflow-hidden rounded-sm border border-gold/35 bg-emerald-deep shadow-[0_24px_60px_rgba(3,20,16,0.55)]">
@@ -430,7 +443,7 @@ export default function HonoraryCountryPage() {
       </section>
 
       {/* 8 · The Vision — industrial transformation, 3 stat cards */}
-      <section id="vision" className="scroll-mt-24 bg-ivory px-4 pt-20 pb-20 sm:scroll-mt-32 sm:px-8 lg:scroll-mt-[190px] lg:px-16 lg:pt-28">
+      <section id="vision" className="scroll-mt-24 bg-ivory px-4 pt-20 pb-20 sm:scroll-mt-32 sm:px-8 lg:scroll-mt-24 lg:px-16 lg:pt-28">
         <div className="mx-auto w-full max-w-[max(1280px,80vw)]">
           <Eyebrow>The Vision</Eyebrow>
           <h2 className="mt-3 font-display text-h1 text-ink">Industrial Transformation</h2>
@@ -497,66 +510,6 @@ export default function HonoraryCountryPage() {
           </div>
         </div>
       </section>
-
-      {/* Prev / next */}
-      <div className="mx-auto w-full max-w-[max(1280px,80vw)] border-hairline border-t px-4 py-8 sm:px-8 lg:px-16">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <div className="flex min-h-10 items-center">
-            <a
-              className="group inline-flex items-center gap-2 font-semibold text-emerald-cta text-small transition-colors hover:text-emerald-deep"
-              href={`${SITE_ORIGIN}/en/program/ministerial-roundtable`}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-arrow-left size-4 transition-transform group-hover:-translate-x-1"
-                aria-hidden="true"
-              >
-                <path d="m12 19-7-7 7-7" />
-                <path d="M19 12H5" />
-              </svg>
-              Ministerial Roundtable
-            </a>
-          </div>
-          <a
-            className="font-semibold text-muted text-small underline-offset-4 transition-colors hover:text-emerald-cta hover:underline"
-            href={`${SITE_ORIGIN}/en/program`}
-          >
-            Back to Features
-          </a>
-          <div className="flex min-h-10 items-center justify-end">
-            <a
-              className="group inline-flex items-center gap-2 font-semibold text-emerald-cta text-small transition-colors hover:text-emerald-deep"
-              href={`${SITE_ORIGIN}/en/program/women-in-mining`}
-            >
-              Women in Mining Forum
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-arrow-right size-4 transition-transform group-hover:translate-x-1"
-                aria-hidden="true"
-              >
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
     </main>
   )
 }
