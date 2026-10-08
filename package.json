@@ -1,0 +1,26 @@
+{
+  "name": "a2m-honorary-country",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Standalone concept page — Côte d'Ivoire, Honorary Country of A2M 2027. Extracted verbatim from the A2M site (main @ c236b1d) for review by the Côte d'Ivoire team.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build && node tools/fix-paths.mjs",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lucide-react": "1.28.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "@vitejs/plugin-react": "6.0.5",
+    "tailwindcss": "^4.3.3",
+    "typescript": "7.0.2",
+    "vite": "8.2.0"
+  }
+}

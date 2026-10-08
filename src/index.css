@@ -1,0 +1,353 @@
+@import 'tailwindcss';
+@import './fonts.css';
+
+/*
+ * A2M 2027 design tokens — extracted 1:1 from the reference deployment's
+ * compiled stylesheet so every utility class used by the migrated markup
+ * resolves to the same value it had on the original site.
+ */
+@theme {
+  /* Brand palette */
+  --color-ivory: #fff;
+  --color-card: #fff;
+  --color-surface: #e9efe6;
+  --color-mist: #e9efe6;
+  --color-ink: #1f1f1f;
+  --color-anthracite: #1f1f1f;
+  --color-muted: #1f1f1fb8;
+  --color-subtle: #1f1f1f8c;
+  --color-hairline: #1f1f1f24;
+  --color-hairline-soft: #1f1f1f14;
+  --color-emerald-cta: #0f3d2e;
+  --color-emerald-deep: #0f3d2e;
+  --color-emerald-ink: #052e24;
+  --color-jade: #4a9c7e;
+  --color-nightblue: #0f2440;
+  --color-champagne: #e8d9a8;
+  --color-gold: #b38a3d;
+  --color-gold-deep: #8a6529;
+  --color-gold-light: #d3ac57;
+  --color-bronze: #a07f3a;
+  --color-copper: #6b4e1e;
+  --color-taupe: #8b7d5f;
+  --color-sage: #a8b788;
+  --color-deepred: #7a1f1f;
+  --color-black: #000;
+  --color-white: #fff;
+
+  /* Typography */
+  --font-inter: 'Inter', 'Inter Fallback';
+  --font-archivo: 'Archivo', 'Archivo Fallback';
+  --font-sans: var(--font-inter), 'Inter', -apple-system, system-ui, sans-serif;
+  --font-display: var(--font-archivo), 'Archivo', -apple-system, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.55;
+  --text-body: 1rem;
+  --text-body--line-height: 1.65;
+  --text-lead: 1.125rem;
+  --text-lead--line-height: 1.6;
+  --text-h3: 1.25rem;
+  --text-h3--line-height: 1.5;
+  --text-h3--font-weight: 600;
+  --text-h2: 1.8125rem;
+  --text-h2--line-height: 1.31;
+  --text-h2--font-weight: 700;
+  --text-h1: 2.375rem;
+  --text-h1--line-height: 1.21;
+  --text-h1--font-weight: 700;
+  --text-display: 3rem;
+  --text-display--line-height: 1;
+  --text-display--letter-spacing: -0.015em;
+  --text-display--font-weight: 700;
+  --text-data: 1.375rem;
+  --text-data--line-height: 1.1;
+  --text-data-xl: 2.375rem;
+  --text-data-xl--line-height: 1;
+
+  /* Hero + pull-quote scale (promoted from arbitrary text-[...] sizes) */
+  --text-hero: 1.7rem;
+  --text-hero--line-height: 1.15;
+  --text-hero-md: 2.4rem;
+  --text-hero-md--line-height: 1.1;
+  --text-hero-lg: 2.9rem;
+  --text-hero-lg--line-height: 1.1;
+  --text-quote: 1.2rem;
+  --text-quote--line-height: 1.5;
+  --text-quote-md: 1.3rem;
+  --text-quote-md--line-height: 1.5;
+
+  --tracking-tight: -0.005em;
+
+  /* Radius & elevation */
+  --radius-sm: 2px;
+  --shadow-card: 0 2px 14px #1f1f1f0a;
+  --shadow-card-hover: 0 12px 28px #1f1f1f1a;
+  --shadow-emerald: 0 4px 14px #0f3d2e40;
+  --shadow-gold: 0 4px 14px #b38a3d66;
+
+  /* Motion */
+  --ease-cinema: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-discret: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-trace: cubic-bezier(0.65, 0, 0.35, 1);
+  --animate-accordion-down: accordion-down 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --animate-accordion-up: accordion-up 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --animate-fade-in: fade-in 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --animate-slide-in-right: slide-in-right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slide-out-right: slide-out-right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Breakpoints used by the reference build */
+  --breakpoint-3xl: 120rem;
+}
+
+/* Site-wide custom classes from the reference build (verbatim). */
+:root {
+  --header-h: 62px;
+}
+
+/* Page containers with internal horizontal gutters need the same usable
+   width as the footer, whose gutters sit inside an 8rem-wider outer box. */
+main [class~="max-w-[max(1280px,80vw)]"].mx-auto.w-full.px-4[class~="sm:px-8"][class~="lg:px-16"] {
+  max-width: calc(max(1280px, 80vw) + 8rem);
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Metallic gold surface for primary CTAs */
+.gold-metallic {
+  background-image: linear-gradient(155deg, var(--color-gold-light) 0%, var(--color-gold) 44%, var(--color-gold) 56%, var(--color-gold-deep) 100%);
+}
+
+/* Topographic texture overlays */
+.a2m-motif:before {
+  content: '';
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url(/images/texture/contours-dark.svg);
+  background-position: 50%;
+  background-size: cover;
+  position: absolute;
+  inset: 0;
+}
+.a2m-motif-light:before {
+  content: '';
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.72;
+  background-image: url(/images/texture/contours-light.svg);
+  background-position: 50%;
+  background-size: cover;
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: radial-gradient(120% 110%, #0000 24%, #000 80%);
+  mask-image: radial-gradient(120% 110%, #0000 24%, #000 80%);
+}
+
+/* Announcement ticker (2026-09 redesign): a duplicated track scrolls one
+   full width so the loop is seamless; pauses on hover; static under
+   reduced motion (the !important outranks the global reduce rule). */
+.a2m-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.a2m-marquee-track {
+  display: inline-flex;
+  min-width: 200%;
+  animation: a2m-marquee-scroll 42s linear infinite;
+}
+.a2m-marquee:hover .a2m-marquee-track,
+.a2m-marquee:focus-within .a2m-marquee-track {
+  animation-play-state: paused;
+}
+@keyframes a2m-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .a2m-marquee-track {
+    animation: none !important;
+  }
+}
+
+/* Entrance animations */
+.a2m-cinema {
+  animation: a2m-cinema-in 1.4s var(--ease-cinema) both;
+}
+.a2m-page-enter {
+  animation: a2m-page-in 0.5s var(--ease-cinema) both;
+}
+.a2m-reveal {
+  animation: linear both a2m-reveal-in;
+  animation-timeline: view();
+  animation-range: entry cover 18%;
+}
+
+/* Keep the About page's four-stat band crisp while scrolling on phones. */
+@media (max-width: 767px) {
+  #conference.a2m-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* KPI band — animated on when the section enters the viewport
+   (the app adds .a2m-kpi-on via IntersectionObserver). */
+.a2m-kpi-rule {
+  transform-origin: 0;
+  transform: scaleX(0);
+}
+.a2m-kpi-num,
+.a2m-kpi-label {
+  opacity: 0;
+}
+.a2m-kpi-on .a2m-kpi-rule {
+  animation: a2m-draw 0.35s var(--ease-trace) both;
+}
+.a2m-kpi-on .a2m-kpi-label {
+  animation: a2m-reveal-in 0.4s var(--ease-discret) 0.12s both;
+}
+.a2m-kpi-on .a2m-kpi-num {
+  animation: a2m-rise 0.45s var(--ease-discret) 0.3s both;
+}
+.a2m-audience-swap {
+  animation: a2m-rise 0.4s var(--ease-discret) both;
+}
+
+@keyframes accordion-down {
+  0% {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+@keyframes accordion-up {
+  0% {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    transform: translate(100%);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+@keyframes slide-out-right {
+  0% {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(100%);
+  }
+}
+@keyframes a2m-reveal-in {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes a2m-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes a2m-draw {
+  0% {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes a2m-cinema-in {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    filter: blur();
+    transform: none;
+  }
+}
+@keyframes a2m-page-in {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Browsers without scroll-driven animations must not hide content:
+   without a timeline the 0s animation would snap to the end state anyway,
+   but be explicit about it. */
+@supports not (animation-timeline: view()) {
+  .a2m-reveal {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .a2m-reveal {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
