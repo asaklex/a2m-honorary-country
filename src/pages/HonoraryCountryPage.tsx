@@ -6,7 +6,6 @@
 // event facts (Centre Mont-Royal, June 7–9, 2027).
 import type { ReactNode } from 'react'
 import { legacyFrenchOrigin } from '../data/navigation'
-import OnThisPageNav from '../components/OnThisPageNav'
 
 // Standalone extract: the four site-internal links (waitlist, prev/next) point
 // at the live A2M production site so they keep working outside the app router.
@@ -170,18 +169,6 @@ export default function HonoraryCountryPage() {
           </div>
         </div>
       </section>
-      <OnThisPageNav
-        items={[
-          { id: 'rising-force', label: 'A rising force' },
-          { id: 'full-ascent', label: 'A country in full ascent' },
-          { id: 'gold-story', label: 'The gold story' },
-          { id: 'exploration-surge', label: 'Exploration surge' },
-          { id: 'beyond-gold', label: 'Beyond gold' },
-          { id: 'proven-partner', label: 'A proven partner' },
-          { id: 'vision', label: 'The vision' },
-        ]}
-      />
-
       {/* 2 · A rising force — three photo cards on white */}
       <section id="rising-force" className="scroll-mt-24 bg-ivory px-4 py-20 sm:scroll-mt-32 sm:px-8 lg:scroll-mt-[190px] lg:px-16">
         <div className="mx-auto w-full max-w-[max(1280px,80vw)]">
